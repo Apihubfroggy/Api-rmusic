@@ -14,11 +14,6 @@ app.get('/random-link', (req, res) => {
   res.status(200).json({ link: randomLink });
 });
 
-// ডিফল্ট রুট
-app.get('/', (req, res) => {
-  res.send("Welcome to the Random Link API!");
-});
-
 // অ্যাপটি শুরু করুন
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
