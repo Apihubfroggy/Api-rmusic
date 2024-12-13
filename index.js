@@ -2,19 +2,24 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// লিংকগুলোর একটি অ্যারে
-const links = [
+// Array of audio links
+const audioLinks = [
   "https://drive.google.com/uc?export=download&id=1257kFevdMZutEDNO-8iVjU6_TkyQPx_W",
   "https://drive.google.com/uc?export=download&id=12AxleoSoeDS4T7o67kkAiUDGzoyUR0Yo"
 ];
 
-// API রুট, যা র্যান্ডম লিংক প্রদান করবে
-app.get('/random-link', (req, res) => {
-  const randomLink = links[Math.floor(Math.random() * links.length)];
-  res.status(200).json({ link: randomLink });
+// Default route
+app.get('/', (req, res) => {
+  res.send("Welcome to the Random Music API! Use /random-link to get a random song.");
 });
 
-// অ্যাপটি শুরু করুন
+// Random link route
+app.get('/random', (req, res) => {
+  const randomLink = audioLinks[Math.floor(Math.random() * audioLinks.length)];
+  res.json({ song_url: randomLink });
+});
+
+// Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running at http://localhost:${port}`);
 });
