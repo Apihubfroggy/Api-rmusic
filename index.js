@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4000;
 
 const audioLinks = [
   "https://drive.google.com/uc?export=download&id=1257kFevdMZutEDNO-8iVjU6_TkyQPx_W",
@@ -38,7 +38,7 @@ const audioLinks = [
 ];
 
 app.get('/', (req, res) => {
-  res.send("Welcome to the Random Music API! Use /random-link to get a random song.");
+  res.send("Welcome to the Random Music API! Use /random to get a random song.");
 });
 
 app.get('/random', (req, res) => {
@@ -47,5 +47,5 @@ app.get('/random', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Random Music API is running at http://localhost:${port}`);
 });
