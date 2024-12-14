@@ -1,7 +1,7 @@
 {
-  "name": "random-link-api",
+  "name": "random-music-api",
   "version": "1.0.0",
-  "description": "An API to provide random download links",
+  "description": "An API to provide random music download links",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
